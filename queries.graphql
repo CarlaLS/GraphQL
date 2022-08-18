@@ -1,0 +1,71 @@
+mutation {
+    createProducts(
+        data: {
+            name: Regla  
+            description: acrilico 20 cm
+            category: reglas
+            image: regla1.jpg
+            code: R1
+            price: 10
+            stock: 200
+        }
+    ) {
+        name
+    }
+}
+
+query {
+    getProducts {
+        name
+        description
+        category
+        price
+        stock
+    }
+}
+
+query {
+    getProducts(campo: "category", valor: "reglas") {
+        name
+        description
+        category
+        price
+        stock
+    }
+}
+
+query {
+    getProduct(id: "xxxxxxxxxxxxx") {
+        name
+        description
+        category
+        price
+        stock
+    }
+}
+
+
+mutation {
+    updatePersona(
+        id: "xxxxxxxxxxxxx"
+        data: {
+            name: Regla  
+            description: acrilico 30 cm
+            category: reglas
+            image: regla2.jpg
+            code: R2
+            price: 10
+            stock: 50
+        }
+    ) {
+        id
+        name
+    }
+}
+
+mutation {
+    deletePersona(id: "xxxxxxxxxxxxx") {
+        id
+        name
+    }
+}
